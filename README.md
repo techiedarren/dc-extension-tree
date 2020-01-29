@@ -10,7 +10,7 @@ This extension can be used to edit a hierarchy of nodes. Each node in the tree h
 
 ### Example Schema
 
-```
+```json
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "...",
@@ -100,24 +100,24 @@ By default, nodes will be displayed using the “title” field from the node sc
 
 Example:
 
-```
+```json
 {
-    type: "object",
-    labelField: "label",
-    properties: {
-    type: {
-      const: "menu"
-    },
-    data: {
-      type: "object",
-      properties: {
-        label: {
-          type: "string",
-          title: "Label",
-          description: "Menu label"
+    "type": "object",
+    "labelField": "label",
+    "properties": {
+        "type": {
+            "const": "menu"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "title": "Label",
+                    "description": "Menu label"
+                }
+            }
         }
-      }
-    }
   }
 }
 ```
@@ -128,7 +128,7 @@ To enable validation, pass in an additional parameter “pointer” inside the �
 
 Example:
 
-```
+```json
 {
     "ui:extension": {
         "url": "...",
@@ -143,7 +143,7 @@ Example:
 
 If your schema includes content link fields, the extension will show a default icon when the value is populated. You can override this with either a card or custom icon by providing the following settings:
 
-```
+```json
 {
     "ui:extension": {
         "url": "...",
@@ -163,7 +163,7 @@ If your schema includes content link fields, the extension will show a default i
 
 You can also use a wildcard “*” to use the same card or icon for every content type:
 
-```
+```json
 {
     "ui:extension": {
         "url": "...",
