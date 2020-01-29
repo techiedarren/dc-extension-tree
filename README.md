@@ -12,35 +12,37 @@ This extension can be used to edit a hierarchy of nodes. Each node in the tree h
 
 ```json
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "...",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "...",
 
     "title": "Menu",
     "description": "",
 
-	"allOf": [{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content" }],
-	
-	"type": "object",
-	"properties": {
-		"menu": {
+    "allOf": [{
+        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }],
+
+    "type": "object",
+    "properties": {
+        "menu": {
             "type": "array",
             "title": "Menu",
-            
+
             "ui:extension": {
-				"url": "https://unpkg.com/dc-extension-tree/build/dynamicContent.browser.umd.min.js"
+                "url": "https://unpkg.com/dc-extension-tree/build/"
             },
 
             "items": {
-                "oneOf": [
-                    { "$ref": "#/definitions/menu" }
-                ]
+                "oneOf": [{
+                    "$ref": "#/definitions/menu"
+                }]
             }
         }
-	},
-	"propertyOrder": [],
+    },
+    "propertyOrder": [],
 
-	"definitions": {
-		"menu": {
+    "definitions": {
+        "menu": {
             "type": "object",
             "title": "Menu",
             "labelField": "label",
@@ -61,14 +63,14 @@ This extension can be used to edit a hierarchy of nodes. Each node in the tree h
                 "children": {
                     "type": "array",
                     "items": {
-						"oneOf": [
-							{ "$ref": "#/definitions/menuItem" }
-						]
+                        "oneOf": [{
+                            "$ref": "#/definitions/menuItem"
+                        }]
                     }
                 }
             }
         },
-		"menuItem": {
+        "menuItem": {
             "type": "object",
             "title": "Menu Item",
             "labelField": "label",
@@ -88,7 +90,7 @@ This extension can be used to edit a hierarchy of nodes. Each node in the tree h
                 }
             }
         }
-	}
+    }
 }
 ```
 
