@@ -29,7 +29,7 @@ This extension can be used to edit a hierarchy of nodes. Each node in the tree h
             "title": "Menu",
 
             "ui:extension": {
-                "url": "https://unpkg.com/dc-extension-tree/build/"
+                "url": "https://techiedarren.github.io/dc-extension-tree/"
             },
 
             "items": {

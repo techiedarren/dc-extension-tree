@@ -42,7 +42,8 @@
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "gh-pages": "^1.2.0"
   },
   "scripts": {
     "fix": "run-s fix:*",
@@ -62,9 +63,10 @@
     "version:major": "standard-version --release-as major",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "all": "run-s reset build",
-    "prepare-patch-release": "run-s all version:patch",
-    "prepare-minor-release": "run-s all version:minor",
-    "prepare-major-release": "run-s all version:major"
+    "prepare-patch-release": "run-s all version:patch publish",
+    "prepare-minor-release": "run-s all version:minor publish",
+    "prepare-major-release": "run-s all version:major publish",
+    "publish": "gh-pages -m \"[ci skip] Updates\" -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
